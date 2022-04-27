@@ -3,49 +3,16 @@
   padding: 0px;
   box-sizing: border-box;
 }
-body{
+body {
   display: grid;
   gap: 10px;
   grid-template:
     "header" 200px
     "container" 1fr/
-     1fr;
+    1fr;
 
-     height: 100vh;
-     width: 100vw;
-
-}
-header{
-  grid-area: header;
-}
-
-div {
-  display: grid;
-  min-width: 40px;
-  min-height: 40px;
-  padding: 4px;
-  border: 5px dotted lightcoral;
-  gap: 10px;
-}
-.box,.boxGrid{
-  min-width: 40px;
-  min-height: 40px;
-  padding: 4px;
-  border: 5px dotted rgb(128, 240, 212);
-}
-.logo{
-  margin: 10px;
-  padding: 0px;
-  min-width: 20px;
-  min-height: 20px;
-  border: 5px dotted black;
-}
-.blackbox{
-  display: grid;
-  min-width: 20px;
-  min-height: 20px;
-  border: 5px solid black;
-  justify-items: start
+  height: 100vh;
+  width: 100vw;
 }
 .container {
   grid-area: container;
@@ -60,40 +27,74 @@ div {
   height: 100vh;
   width: 100vw;
 }
-.boxGrid{
-grid-area: boxGrid;
-}.blackbox{
+header {
+  grid-area: header;
+}
+
+div {
+
+  min-width: 40px;
+  min-height: 40px;
+  padding: 4px;
+  border: 5px dotted lightcoral;
+
+}
+.box,
+.boxGrid {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 4px;
+  border: 5px dotted rgb(128, 240, 212);
+}
+.logo {
+  margin: 10px;
+  padding: 0px;
+  min-width: 20px;
+  min-height: 20px;
+  border: 5px dotted black;
+}
+.blackbox {
+  display: grid;
+  min-width: 20px;
+  min-height: 20px;
+  border: 5px solid black;
+  justify-items: start;
+}
+
+.boxGrid {
+  grid-area: boxGrid;
+}
+.blackbox {
   grid-area: blackbox;
   border-radius: 10px;
 }
-.second-columns-search{
+.second-columns-search {
   display: grid;
-  grid-template-columns: [blackbox] 200px [boxGrid] minmax(20px,1fr);
-   gap:10px;
-   padding-bottom: 80px;
+  grid-template-columns: [blackbox] 200px [boxGrid] minmax(20px, 1fr);
+  gap: 10px;
+  padding-bottom: 80px;
 }
-.second-columns{
+.second-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
-   gap:10px;
+  gap: 10px;
 }
-.three-columns-header{
+.three-columns-header {
   display: grid;
-  grid-template-columns:[logo] 100px [nav] 1fr [navBar] minmax(20px,1fr);;
-   gap:10px;
+  grid-template-columns: [logo] 100px [nav] 1fr [navBar] minmax(20px, 1fr);
+  gap: 10px;
 }
-.five-columns{
+.five-columns {
   display: grid;
   grid-template-columns: repeat(5, minmax(50px, 1fr));
   gap: 5px;
-  
 }
-.four-rows-oneExpand{
+.four-rows-oneExpand {
   display: grid;
-  grid-template-rows:repeat(4, minmax(50px, 100px));
-  gap:10px;
+  grid-template-rows: repeat(4, minmax(50px, 1fr));
+  gap: 10px;
 }
-.expand{
+.expand {
   grid-area: expand;
 }
 .logo {
@@ -105,25 +106,27 @@ grid-area: boxGrid;
 .navBar {
   grid-area: "navBar";
 }
-.leftMenu{
+.middleNav {
+  grid-area: "middleNav";
+}
+.leftMenu {
   grid-area: "leftMenu";
 }
-.main{
-  grid-area: "main";
-}
-.rightMenu{
-  grid-area: "rightMenu";
-}
-.leftBar1{
+.leftBar1 {
   grid-area: "leftBar1";
 }
-.leftBar2{
+.leftBar2 {
   grid-area: "leftBar2";
 }
-.rightBar1{
+.main {
+  grid-area: "main";
+}
+.rightMenu {
+  grid-area: "rightMenu";
+}
+.rightBar1 {
   grid-area: "rightBar1";
 }
-.rightBar2{
-
+.rightBar2 {
   grid-area: "rightBar2";
 }
