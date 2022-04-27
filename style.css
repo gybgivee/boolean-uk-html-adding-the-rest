@@ -18,15 +18,18 @@ body {
   grid-area: container;
   display: grid;
   grid-template:
-    "leftMenu middleNav middleNav rightMenu" 200px
-    "leftMenu main main rightMenu" 1fr
-    "leftBar1 main main rightBar1" 1fr
-    "leftBar2 main main rightBar2" 1fr /
-    200px 1fr 1fr 0.5fr;
+    "leftMenu middleNav rightMenu" 200px
+    "leftBar1 main rightBar1" 1fr
+    "leftBar1 main rightBar1" 1fr /
+    200px 1fr 0.5fr;
 
   height: 100vh;
   width: 100vw;
+  gap:20px;
+  background-color: rgb(210, 201, 201);
+  padding: 30px;
 }
+
 header {
   grid-area: header;
 }
@@ -36,7 +39,7 @@ div {
   min-width: 40px;
   min-height: 40px;
   padding: 4px;
-  border: 5px dotted lightcoral;
+  border: 5px solid rgb(172, 13, 13);
 
 }
 .box,
@@ -44,7 +47,7 @@ div {
   min-width: 40px;
   min-height: 40px;
   padding: 4px;
-  border: 5px dotted rgb(128, 240, 212);
+  border: 5px dotted rgb(27, 116, 40);
 }
 .logo {
   margin: 10px;
@@ -115,11 +118,10 @@ div {
 .leftBar1 {
   grid-area: "leftBar1";
 }
-.leftBar2 {
-  grid-area: "leftBar2";
-}
+
 .main {
   grid-area: "main";
+ 
 }
 .rightMenu {
   grid-area: "rightMenu";
@@ -129,4 +131,7 @@ div {
 }
 .rightBar2 {
   grid-area: "rightBar2";
+}
+.leftBar2 {
+  grid-area: "leftBar2";
 }
