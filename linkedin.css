@@ -1,218 +1,182 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .box {
-    border: 2px dotted blue;
-    border-radius: 5px;
-    background-color: white;
-  }
-  
-  .inner-box {
-    border: 2px dotted green;
-  }
-  
-  .container {
-    border: none;
-    display: grid;
-    justify-content: center;
-    grid-template-rows: 50px 1fr;
-    grid-gap: 10px;
-    height: 100vh;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  gap: 10px;
+}
+.box {
+  border: 2px dotted rgb(4, 4, 23);
+  background-color: white;
+}
+.inner-box {
+  border: 2px dotted rgb(200, 142, 57);
+}
+.second-inner-box {
+  border: 2px dotted red;
+}
+.circle {
+  border-radius: 50%;
+}
+.container {
+  height: 100vh;
+  border: none;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  justify-content: center;
+  grid-gap: 10px;
+}
+main {
+  background-color: rgb(139, 128, 128);
+  padding: 10px;
+  display: grid;
+  grid-template:
+    "leftMenu1 midNav rightMenu1"
+    "leftMenu1 main rightMenu1"
+    "leftMenu2 main rightMenu2"
+    "leftMenu3 main rightMenu3"
+    ". main ." 1fr /
+    150px 400px 150px;
+  gap: 10px;
+}
+.main {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-area: main;
+  padding: 5px;
+  gap: 5px;
+}
+.main .inner-box {
+  min-height: 200px;
+}
+.search-bar {
+  display: grid;
+  align-items: center;
+  padding-left: 10px;
+}
+.search {
+  border: 2px solid;
+  border-radius: 5px;
+  width: 150px;
+  height: 80%;
+}
+.logo {
+  display: grid;
+  place-items: center;
+}
+img {
+  width: 50px;
+}
+nav.box {
+  display: grid;
+  grid-auto-flow: column;
+  width: fit-content;
+  padding: 5px;
+  gap: 5px;
+}
+.box_standard {
+  width: 40px;
+  height: 40px;
+}
+.gird-box {
+  height: 120px;
+}
+.gird-box .inner-box {
+  height: 50px;
+}
+.gird-box .big {
+  height: 150px;
+}
+.midNav {
+  grid-area: midNav;
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 5px;
+  height: 100px;
+  padding: 7px;
+}
+.midNav .top {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  padding: 2px;
+  gap: 5px;
+}
+.midNav .bottom {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 2px;
+  gap: 2px;
+}
+.leftMenu1,
+.rightMenu1 {
+  display: grid;
+  grid-auto-rows: auto;
+  height: fit-content;
+  padding: 5px;
+  gap: 5px;
+}
+.leftMenu1 {
+  grid-area: leftMenu1;
+}
+.leftMenu2 {
+  grid-area: leftMenu2;
+}
+.leftMenu3 {
+  grid-area: leftMenu3;
+}
+.rightMenu1 {
+  grid-area: rightMenu1;
+}
+.rightMenu2 {
+  grid-area: rightMenu2;
+}
+.rightMenu3 {
+  grid-area: rightMenu3;
+}
+
+
+@media screen and (max-width: 1025px) {
   header {
-    display: grid;
-  
-    grid-template-columns: 50px 1fr auto;
-    gap: 10px;
+    grid-template-columns: 50px 50px 1fr;
   }
-  
-  .search-bar {
-    display: grid;
-    align-items: center;
-    padding-left: 10px;
-  }
-  
+
   .search {
-    border: 2px solid;
-    border-radius: 5px;
-    width: 150px;
-    height: 80%;
+    display: none;
   }
-  
-  .logo {
-    display: grid;
-    place-items: center;
-  }
-  
-  img {
-    width: 50px;
-  }
-  
-  nav.box {
-    width: fit-content;
-    padding: 5px;
-    display: grid;
-  
-    gap: 5px;
-    grid-auto-flow: column;
-  }
-  
-  .nav-item {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .menu-item {
-    height: 100px;
-  }
-  
-  .menu-item .inner-box {
-    height: 50px;
-  }
-  
-  .menu-item .big {
-    height: 150px;
-  }
-  
-  .left1,
-  .right1 {
-    padding: 5px;
-    height: fit-content;
-  
-    display: grid;
-    gap: 5px;
-    grid-auto-rows: auto;
-    /* grid-template-rows: repeat(auto-fit, 50px); */
-  }
-  
-  .left1 {
-    grid-area: left1;
-  }
-  
-  .left2 {
-    grid-area: left2;
-  }
-  
-  .left3 {
-    grid-area: left3;
-  }
-  
-  .right1 {
-    grid-area: right1;
-  }
-  
-  .right2 {
-    grid-area: right2;
-  }
-  
-  .right3 {
-    grid-area: right3;
-  }
-  
-  .start-post {
-    grid-area: start-post;
-    height: 100px;
-    padding: 5px;
-  
-    display: grid;
-    gap: 5px;
-    grid-auto-rows: auto;
-  }
-  
-  .second-inner-box {
-    border: 2px dotted red;
-  }
-  
-  .circle {
-    border-radius: 50%;
-  }
-  
-  .start-post .top,
-  .start-post .bottom {
-    padding: 2px;
-    display: grid;
-    gap: 2px;
-  }
-  
-  .start-post .top {
-    grid-template-columns: 35px 1fr;
-  }
-  
-  .start-post .bottom {
-    grid-auto-flow: column;
-  }
-  
-  .post-section {
-    grid-area: post-section;
-    padding: 5px;
-  
-    display: grid;
-    gap: 5px;
-    grid-auto-rows: auto;
-  }
-  
-  .post-section .inner-box {
-    min-height: 200px;
-  }
-  
+}
+
+@media screen and (max-width: 990px) {
   main {
-    background-color: lightgray;
-    padding: 10px;
-  
-    display: grid;
     grid-template:
-      "left1 start-post right1"
-      "left1 post-section right1"
-      "left2 post-section right2"
-      "left3 post-section right3"
-      ". post-section ." 1fr /
-      150px 400px 150px;
-    gap: 10px;
+      "leftMenu1 midNav"
+      "leftMenu1 main"
+      "leftMenu2 main"
+      "leftMenu3 main"
+      ". main" 1fr/
+      150px 400px;
   }
-  
-  @media screen and (max-width: 1025px) {
-    header {
-      grid-template-columns: 50px 50px 1fr;
-    }
-  
-    .search {
-      display: none;
-    }
+
+  .rightMenu1,
+  .rightMenu2,
+  .rightMenu3 {
+    display: none;
   }
-  
-  @media screen and (max-width: 990px) {
-    main {
-      grid-template:
-        "left1 start-post"
-        "left1 post-section"
-        "left2 post-section"
-        "left3 post-section"
-        ". post-section" 1fr/
-        150px 400px;
-    }
-  
-    .right1,
-    .right2,
-    .right3 {
-      display: none;
-    }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    grid-template:
+      "leftMenu1" 150px
+      "midNav" 100px
+      "main" 1fr /
+      550px;
   }
-  
-  @media screen and (max-width: 768px) {
-    main {
-      grid-template:
-        "left1" 150px
-        "start-post" 100px
-        "post-section" 1fr /
-        550px;
-    }
-  
-    .left2,
-    .left3 {
-      display: none;
-    }
+
+  .leftMenu2,
+  .leftMenu3 {
+    display: none;
   }
+}
